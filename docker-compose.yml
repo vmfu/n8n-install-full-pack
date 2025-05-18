@@ -462,6 +462,8 @@ services:
     container_name: crawl4ai
     profiles: ["crawl4ai"]
     restart: unless-stopped
+    ports: # <--- ДОБАВЬТЕ ЭТУ СЕКЦИЮ
+      - "11235:11235" # <--- И ЭТУ СТРОКУ (<порт_хоста>:<порт_контейнера>)
     shm_size: 1g # Recommended for browser operations
     env_file:
       - .env
